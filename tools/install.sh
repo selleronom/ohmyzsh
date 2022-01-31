@@ -277,7 +277,7 @@ setup_ohmyzsh() {
   && git config oh-my-zsh.remote origin \
   && git config oh-my-zsh.branch "$BRANCH" \
   && git remote add origin "$REMOTE" \
-  && git fetch --depth=1 origin \
+  && git fetch --depth=1 --recurse-submodules origin \
   && git checkout -b "$BRANCH" "origin/$BRANCH" || {
     rm -rf "$ZSH"
     fmt_error "git clone of oh-my-zsh repo failed"
